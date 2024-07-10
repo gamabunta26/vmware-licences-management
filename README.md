@@ -87,5 +87,13 @@ View build details: docker-desktop://dashboard/build/default/default/ls5vf1909wc
 What's Next?
   View a summary of image vulnerabilities and recommendations → docker scout quickview
   
-  
-docker run -d --name vmware-licence-dockerfile -p 3000:3000 -p 5173:5173 vmware-licence
+```
+docker build -t vmware-licence .
+docker run -d -it --name vmware-licence -p 3000:3000 -p 5173:5173 vmware-licence
+```
+
+```
+docker stop vmware-licence; docker rm vmware-licence; docker rmi vmware-licence; docker system prune -a -f
+docker build -t vmware-licence . ; docker image ls; docker container ls -a; docker run -d -it --name vmware-licence -p 3000:3000 -p 5173:5173 -v .\app\vmware-licences-management\backend\data\:/opt/vmware-licences-management/backend/data vmware-licence
+```
+

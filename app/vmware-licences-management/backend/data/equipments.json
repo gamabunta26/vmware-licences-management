@@ -18,13 +18,13 @@
       "version": "6.7"
     },{
         "id": 4,
-        "name": "vCenter Server 1",
+        "name": "vCenter Server 2",
         "type": "VMware vCenter Server",
         "version": "8.0"
       },
       {
         "id": 5,
-        "name": "vCenter Server 1",
+        "name": "vCenter Server 3",
         "type": "VMware vCenter Server",
         "version": "6.7"
       }
