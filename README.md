@@ -97,3 +97,7 @@ docker stop vmware-licence; docker rm vmware-licence; docker rmi vmware-licence;
 docker build -t vmware-licence . ; docker image ls; docker container ls -a; docker run -d -it --name vmware-licence -p 3000:3000 -p 5173:5173 -v .\app\vmware-licences-management\backend\data\:/opt/vmware-licences-management/backend/data vmware-licence
 ```
 
+```
+docker tag vmware-licence gamabunta26/vmware-licence
+docker push gamabunta26/vmware-licence
+```
