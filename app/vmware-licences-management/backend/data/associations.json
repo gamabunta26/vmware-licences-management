@@ -2,5 +2,9 @@
   {
     "equipmentId": 4,
     "licenseId": 4
+  },
+  {
+    "equipmentId": 1,
+    "licenseId": 3
   }
 ]

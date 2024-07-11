@@ -32,10 +32,6 @@
 
     WORKDIR /opt/vmware-licences-management
     # DÉMARRAGE DES SERVICES LORS DE L'EXÉCUTION DE L'IMAGE
-    # ENTRYPOINT  /opt/vmware-licences-management/start_app.sh
+    ENTRYPOINT  /opt/vmware-licences-management/start_app.sh
     
-    # WORKDIR /opt/vmware-licences-management/backend
-    # CMD ["node", "server.js"]
-    # WORKDIR /opt/vmware-licences-management/frontend
-    # # CMD ["npm", "run", "dev"]
     
