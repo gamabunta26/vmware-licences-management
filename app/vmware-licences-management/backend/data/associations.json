@@ -6,5 +6,9 @@
   {
     "equipmentId": 1,
     "licenseId": 3
+  },
+  {
+    "equipmentId": 4,
+    "licenseId": 2
   }
 ]

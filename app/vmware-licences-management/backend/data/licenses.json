@@ -3,31 +3,42 @@
       "id": 1,
       "type": "VMware vCenter Server",
       "version": "7.0",
-      "clef": "ABCDE-12345-FGHIJ-67890"
+      "clef": "ABCDE-12345-FGHIJ-67890",
+      "broadcomID": "651615",
+      "broadcomPath": "/home/qsd/68461681/ben-2024-04-01"
+
     },
     {
       "id": 2,
       "type": "VMware vSphere",
       "version": "7.0",
-      "clef": "FGHIJ-67890-ABCDE-12345"
+      "clef": "FGHIJ-67890-ABCDE-12345",
+      "broadcomID": "65164315",
+      "broadcomPath": ""
     },
     {
       "id": 3,
       "type": "VMware vSphere",
       "version": "6.7",
-      "clef": "12345-ABCDE-67890-FGHIJ"
+      "clef": "12345-ABCDE-67890-FGHIJ",
+      "broadcomID": "654231615",
+      "broadcomPath": ""
     },
     {
         "id": 4,
         "type": "VMware vCenter Server",
         "version": "8.0",
-        "clef": "ABCDE-12345-FGHIJ-67890"
+        "clef": "ABCDE-12345-FGHIJ-67890",
+        "broadcomID": "651415",
+        "broadcomPath": ""
     },
     {
         "id": 5,
         "type": "VMware vCenter Server",
         "version": "6.7",
-        "clef": "ABCDE-12345-FGHIJ-67890"
+        "clef": "ABCDE-12345-FGHIJ-67890",
+        "broadcomID": "651115",
+        "broadcomPath": ""
     }
 ]
   

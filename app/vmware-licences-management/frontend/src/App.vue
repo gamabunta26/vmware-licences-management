@@ -15,18 +15,31 @@
       <h2>Unused Licenses</h2>
       <ul>
         <li v-for="license in unusedLicenses" :key="license.id">
-          {{ license.type }} - Version: {{ license.version }} - Clef: {{ license.clef }}
+          BroadcomID: {{ license.broadcomID }} - BroadcomPath: {{ license.broadcomPath }} - {{ license.type }} - Version: {{ license.version }} - Clef: {{ license.clef }}
         </li>
       </ul>
     </div>
 
     <div>
       <h2>Associations</h2>
-      <ul>
-        <li v-for="association in associations" :key="association.equipmentId + '-' + association.licenseId">
-          {{ getEquipmentName(association.equipmentId) }} - {{ getLicenseType(association.licenseId) }}
-        </li>
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Equipment Name</th>
+            <th>License Type</th>
+            <th>License Version</th>
+            <th>License Key</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="association in associations" :key="association.equipmentId + '-' + association.licenseId">
+            <td>{{ getEquipmentName(association.equipmentId) }}</td>
+            <td>{{ getLicenseType(association.licenseId) }}</td>
+            <td>{{ getLicenseVersion(association.licenseId) }}</td>
+            <td>{{ getLicenseKey(association.licenseId) }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div>
