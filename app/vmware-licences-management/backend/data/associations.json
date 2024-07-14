@@ -1,14 +1,22 @@
 [
   {
+    "equipmentId": 1,
+    "licenseId": 1
+  },
+  {
+    "equipmentId": 1,
+    "licenseId": 2
+  },
+  {
     "equipmentId": 4,
     "licenseId": 4
   },
   {
-    "equipmentId": 1,
+    "equipmentId": 4,
     "licenseId": 3
   },
   {
-    "equipmentId": 4,
-    "licenseId": 2
+    "equipmentId": 5,
+    "licenseId": 5
   }
 ]

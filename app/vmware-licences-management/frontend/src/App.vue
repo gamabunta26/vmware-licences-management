@@ -21,22 +21,28 @@
     </div>
 
     <div>
-      <h2>Associations</h2>
-      <table>
+      <h2>Associations Table</h2>
+      <table border=1>
         <thead>
           <tr>
             <th>Equipment Name</th>
+            <th>Equipment Version</th>
             <th>License Type</th>
-            <th>License Version</th>
-            <th>License Key</th>
+            <th>Version</th>
+            <th>Clé</th>
+            <th>Broadcom ID</th>
+            <th>Broadcom Path</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="association in associations" :key="association.equipmentId + '-' + association.licenseId">
             <td>{{ getEquipmentName(association.equipmentId) }}</td>
+            <td>{{ getEquipmentVersion(association.equipmentId) }}</td>
             <td>{{ getLicenseType(association.licenseId) }}</td>
             <td>{{ getLicenseVersion(association.licenseId) }}</td>
             <td>{{ getLicenseKey(association.licenseId) }}</td>
+            <td>{{ getLicenseBroadcomID(association.licenseId) }}</td>
+            <td>{{ getLicenseBroadcomPath(association.licenseId) }}</td>
           </tr>
         </tbody>
       </table>
@@ -98,10 +104,10 @@ export default {
         const existingVCenterAssociations = associations.value.filter(a =>
           a.equipmentId === selectedEquipment.value && getLicenseType(a.licenseId) === "VMware vCenter Server"
         );
-        if (existingVCenterAssociations.length > 0) {
-          alert('An equipment of type "VMware vCenter Server" can only be associated with one vCenter Server license.');
-          return;
-        }
+        //if (existingVCenterAssociations.length > 0) {
+        //  alert('An equipment of type "VMware vCenter Server" can only be associated with one vCenter Server license.');
+        //  return;
+        //}
       }
 
       if (selectedEquipmentObj.type === "VMware vSphere") {
@@ -142,13 +148,34 @@ export default {
 
     const getEquipmentName = (id) => {
       const equipment = equipments.value.find(e => e.id === id);
-      return equipment ? `${equipment.name} (Version: ${equipment.version})` : '';
+      return equipment.name;
     };
-
+    const getEquipmentVersion = (id) => {
+      const equipment = equipments.value.find(e => e.id === id);
+      return equipment.version;
+    };
     const getLicenseType = (id) => {
       const license = licenses.value.find(l => l.id === id);
-      return license ? `${license.type} - Clef: ${license.clef}` : '';
+      return license.type;
     };
+    const getLicenseKey = (id) => {
+      const license = licenses.value.find(l => l.id === id);
+      return license.clef;
+    };
+    const getLicenseVersion = (id) => {
+      const license = licenses.value.find(l => l.id === id);
+      return license.version;
+    };
+    const getLicenseBroadcomID = (id) => {
+      const license = licenses.value.find(l => l.id === id);
+      return license.broadcomID;
+    };
+    const getLicenseBroadcomPath = (id) => {
+      const license = licenses.value.find(l => l.id === id);
+      return license.broadcomPath;
+    };
+
+
 
     const unusedLicenses = computed(() => {
       const usedLicenseIds = associations.value.map(a => a.licenseId);
@@ -196,6 +223,11 @@ export default {
       associate,
       getEquipmentName,
       getLicenseType,
+      getEquipmentVersion,
+      getLicenseKey,
+      getLicenseVersion,
+      getLicenseBroadcomID,
+      getLicenseBroadcomPath,
       unusedLicenses,
       filteredLicenses
     };
@@ -213,5 +245,9 @@ export default {
 
 form {
   margin-top: 10px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 </style>
